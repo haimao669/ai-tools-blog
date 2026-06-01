@@ -44,10 +44,15 @@ echo ""
 echo "☁️ 推送到GitHub..."
 git push origin master:main 2>&1 || echo "推送失败，请检查GitHub配置"
 
+# 部署到Cloudflare Pages
+echo ""
+echo "🌍 部署到Cloudflare Pages..."
+wrangler pages deploy public --project-name=ai-tools-blog --branch=main --commit-dirty=true 2>&1 || echo "Cloudflare部署失败"
+
 echo ""
 echo "========================================"
 echo "✅ 发布流程完成！"
 echo "📊 共生成 $NUM_ARTICLES 篇文章"
 echo "🌐 GitHub: https://github.com/haimao669/ai-tools-blog"
-echo "☁️ Cloudflare Pages: https://ai-tools-blog.pages.dev"
+echo "☁️ Cloudflare Pages: https://ai-tools-blog-7aa.pages.dev"
 echo "========================================"
