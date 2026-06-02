@@ -117,6 +117,10 @@ buildExpired = false
   url = "/about/"
   weight = 100
 
+[services]
+  [services.google_analytics]
+    id = "G-XXXXXXXXXX"  # 替换为你的Google Analytics跟踪ID
+
 [sitemap]
   changefreq = "weekly"
   filename = "sitemap.xml"
